@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [
@@ -12,6 +13,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const location = useLocation();
+    let errorElement;
 
     let from = location.state?.from?.pathname || "/";
 
@@ -27,9 +29,23 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
     }
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
+
     if (user) {
         navigate(from, { replace: true });
     }
+
+    if (error) {
+
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
+
     const navigateRegister = event => {
         navigate('/register');
     }
@@ -46,15 +62,16 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary w-50 mx-auto d-block" type="submit">
                     Login
                 </Button>
             </Form>
+            {errorElement}
             <p className='mt-2'>New to Arif Wild Photography? <span style={{ cursor: 'pointer' }}
-                className='text-danger' onClick={navigateRegister} >Please Register</span></p>
+                className='text-primary' onClick={navigateRegister} >Please Register</span></p>
+            <p className='mt-2'>Forget Password? <span style={{ cursor: 'pointer' }}
+                className='text-primary' onClick={resetPassword} >Reset Your Password</span></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

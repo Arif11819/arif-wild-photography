@@ -1,22 +1,28 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
+    const [agree, setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+
+    if (user) {
+        navigate('/home');
+    }
 
     const handleRegister = event => {
         event.preventDefault();
@@ -24,15 +30,16 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        createUserWithEmailAndPassword(email, password);
+        if (agree) {
+            createUserWithEmailAndPassword(email, password);
+        }
+
 
     }
-    if (user) {
-        navigate('/home');
-    }
-    const navigateLogin = event => {
+    const navigateRegister = event => {
         navigate('/login');
     }
+
     return (
         <div className='container w-50 mx-auto'>
             <h2 className='text-primary text-center mt-2'>Please Resister</h2>
@@ -50,15 +57,17 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                <input className='me-2' onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+                <label className={agree ? 'text-primary' : 'text-danger'} htmlFor="terms">Accept Terms and Conditions</label>
+                <Button
+                    disabled={!agree}
+                    variant="primary w-50 mx-auto d-block mt-2" type="submit">
                     Register
                 </Button>
             </Form>
             <p className='mt-2'>Already have an Account? <span style={{ cursor: 'pointer' }}
-                className='text-danger' onClick={navigateLogin} >Please Login</span></p>
+                className='text-primary' onClick={navigateRegister} >Please Login</span></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

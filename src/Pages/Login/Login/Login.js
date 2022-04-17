@@ -4,6 +4,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [
@@ -33,8 +36,17 @@ const Login = () => {
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('Please Enter Your Email Address');
+        }
+    }
+
+    if (loading || sending) {
+        return <Loading></Loading>
     }
 
     if (user) {
@@ -72,6 +84,7 @@ const Login = () => {
             <p className='mt-2'>Forget Password? <span style={{ cursor: 'pointer' }}
                 className='text-primary' onClick={resetPassword} >Reset Your Password</span></p>
             <SocialLogin></SocialLogin>
+            <ToastContainer />
         </div>
     );
 };

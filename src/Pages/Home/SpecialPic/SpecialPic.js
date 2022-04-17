@@ -5,7 +5,7 @@ const SpecialPic = ({ specialPic }) => {
     return (
         <div>
             <img className='w-100' src={img} alt="" />
-            <button className='mt-2'>Buy This Picture</button>
+            <button className='mt-2 btn btn-primary'>Buy This Picture</button>
         </div>
     );
 };

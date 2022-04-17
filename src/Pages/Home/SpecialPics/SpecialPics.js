@@ -20,7 +20,7 @@ const specialPics = [
 const SpecialPics = () => {
     return (
         <div>
-            <h2 className='text-center'>My Special Picture Collection</h2>
+            <h2 className='text-center text-primary fw-bolder'>My Special Picture Collection</h2>
             <div className='specialPics-container'>
                 {
                     specialPics.map(specialPic => <SpecialPic

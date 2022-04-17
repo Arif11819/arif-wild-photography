@@ -10,7 +10,7 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div className='container'>
+        <div id='services' className='container'>
             <h2 className='services-title mt-4 text-primary fw-bolder'>My general Picture Services</h2>
             <div className="row">
                 <div className='services-container'>

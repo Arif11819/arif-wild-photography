@@ -17,7 +17,7 @@ const Blogs = () => {
 
             </div>
             <div className='blog'>
-                <h2 className='blog-title'>What other services does firebase provide other than authentication?</h2>
+                <h2 className='blog-title'> Q3.What other services does firebase provide other than authentication?</h2>
                 <p className='question-answer'>There are many services which firebase provides other than authentication : 1.Cloud Firestore. 2.Cloud Functions. 3.Hosting. 4.Cloud Storage. 5.Google Analytics. 6.Predictions. 7.Cloud Messaging. 8.Dynamic Links 9.Remote Config</p>
             </div>
         </div>

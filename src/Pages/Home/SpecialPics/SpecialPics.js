@@ -19,7 +19,7 @@ const specialPics = [
 
 const SpecialPics = () => {
     return (
-        <div id='specialpics'>
+        <div id='specialpics' className='container'>
             <h2 className='text-center text-primary fw-bolder mt-5 pb-2'>My Special Picture Collection</h2>
             <div className='specialPics-container'>
                 {

@@ -3,35 +3,35 @@
         "id": 1,
         "name": "Panda",
         "price": "180",
-        "description": "Analyzing these genetic residues in air offers a new way to study animals. It could give scientists a chance to monitor rare or hard to find animals.",
+        "description": "Giant pandas have a distinctive black and white coat, with black fur around their eyes and on their ears, muzzle, legs and shoulders.",
         "img": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWFsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
         "id": 2,
         "name": "Tiger",
         "price": "100",
-        "description": "Analyzing these genetic residues in air offers a new way to study animals. It could give scientists a chance to monitor rare or hard to find animals.",
+        "description": "The tiger has a muscular body with powerful forelimbs, a large head and a tail that is about half the length of its body.",
         "img": "https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWFsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
         "id": 3,
         "name": "Royal Bengal Tiger",
         "price": "300",
-        "description": "Analyzing these genetic residues in air offers a new way to study animals. It could give scientists a chance to monitor rare or hard to find animals.",
+        "description": "The Bengal Tiger (Panthera tigris tigris) is recognised as the national animal of bangladesh and is renowned as the Royal Bengal Tiger.",
         "img": "https://images.unsplash.com/photo-1562552476-8ac59b2a2e46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHRpZ2VyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
         "id": 4,
         "name": "Mammal",
         "price": "300",
-        "description": "Analyzing these genetic residues in air offers a new way to study animals. It could give scientists a chance to monitor rare or hard to find animals.",
+        "description": "A mammal is an animal that breathes air, has a backbone, and grows hair at some point during its life. In addition, all female mammals have glands that can produce milk.",
         "img": "https://images.unsplash.com/photo-1548103981-34316e50b924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGFuaW1hbCUyMHBpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {
         "id": 5,
         "name": "Parrot",
         "price": "100",
-        "description": "Analyzing these genetic residues in air offers a new way to study animals. It could give scientists a chance to monitor rare or hard to find animals.",
+        "description": "Characteristic features of parrots include a strong, curved bill, an upright stance, strong legs, and clawed zygodactyl feet. Many parrots are vividly coloured, and some are multi-coloured.",
         "img": "https://images.unsplash.com/photo-1556830805-574ede6dfc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFuaW1hbCUyMHBpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
     },
     {

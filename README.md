@@ -1,9 +1,14 @@
-Arif Wild Photography
+
+# Arif Wild Photography
+
 This website I try to put taking of my wild animal photo and sell to the customer who can choose it and buy it
 
-Deployment
+
+## Deployment
+
 To deploy this project in firebase
 
+```
 
 
 ## Features

@@ -14,9 +14,9 @@ To deploy this project in firebase.
 
 ## Features
 
-- Look a beautiful banner.
-- Previews all services.
-- Fullscreen mode.
+- Different types of wild photo display with a beautiful button.
+- Simple and beautiful design.
+- Login and Registration system added, Google and GitHub popup login implemented.
 - Clicking services sectin button and get checkout.
 - If you not Register/Login.
 - Responsive desktop ,tablet and mobile.
